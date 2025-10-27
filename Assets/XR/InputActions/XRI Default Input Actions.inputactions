@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "name": "XRI Default Input Actions",
+    "maps": [
+        {
+            "name": "XRI RightHand",
+            "id": "34707cce-bd21-4b30-9ac9-9fc506369fbb",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "ba0813d5-caf4-441a-ab36-d3138be48317",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "21ae7035-ba30-4ddd-aa0b-c0316b507210",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Activate",
+                    "type": "Button",
+                    "id": "707a1938-b3fd-4e1a-8970-98c4bdbb49a1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6e57abe3-6f56-4068-9bfb-4c7275ab56b7",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "539a1e40-b00d-4942-a972-01d4313bee0c",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6de6130-8666-4a07-8b43-3611d8e46642",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Activate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
