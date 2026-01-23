@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "whisper.unity-master.sln"
+    "dotnet.defaultSolution": "TFG_Unity.sln"
 }
