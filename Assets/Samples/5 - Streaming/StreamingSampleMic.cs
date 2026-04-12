@@ -10,6 +10,7 @@ namespace Whisper.Samples
     /// </summary>
     public class StreamingSampleMic : MonoBehaviour
     {
+        [Header("Core")]
         public WhisperManager whisper;
         public MicrophoneRecord microphoneRecord;
 
@@ -24,6 +25,11 @@ namespace Whisper.Samples
         public Sprite idleIcon;
         public Sprite recordingIcon;
         public float iconFadeDuration = 0.18f;
+
+        [Header("Mic Status Text")]
+        public Text micStatusText;
+        public string idleStatusMessage = "Pulsa el micrófono para comenzar";
+        public string listeningStatusMessage = "Escuchando...";
 
         private WhisperStream _stream;
         private Coroutine _iconTransitionCoroutine;
@@ -41,6 +47,7 @@ namespace Whisper.Samples
 
             // Estado visual inicial
             UpdateButtonVisualImmediate(false);
+            UpdateMicStatusText(false);
         }
 
         private void OnDestroy()
@@ -73,12 +80,15 @@ namespace Whisper.Samples
             }
 
             // Tras StartRecord / StopRecord ya se ha actualizado IsRecording
-            UpdateButtonVisualSmooth(microphoneRecord.IsRecording);
+            bool isRecording = microphoneRecord.IsRecording;
+            UpdateButtonVisualSmooth(isRecording);
+            UpdateMicStatusText(isRecording);
         }
 
         private void OnRecordStop(AudioChunk recordedAudio)
         {
             UpdateButtonVisualSmooth(false);
+            UpdateMicStatusText(false);
         }
 
         private void OnResult(string result)
@@ -175,6 +185,14 @@ namespace Whisper.Samples
             buttonIconImage.color = color;
 
             _iconTransitionCoroutine = null;
+        }
+
+        private void UpdateMicStatusText(bool isRecording)
+        {
+            if (micStatusText == null)
+                return;
+
+            micStatusText.text = isRecording ? listeningStatusMessage : idleStatusMessage;
         }
     }
 }
